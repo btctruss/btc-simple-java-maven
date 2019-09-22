@@ -5,6 +5,9 @@ echo 'The following Maven command installs your Maven-built Java application'
 echo 'into the local Maven repository, which will ultimately be stored in'
 echo 'Jenkins''s local Maven repository (and the "maven-repository" Docker data'
 echo 'volume).'
+
+chmod 775 /var/jenkins_home/workspace/BTC-SimpleMavenApp/pom.xml
+
 set -x
 mvn jar:jar install:install help:evaluate -Dexpression=project.name
 set +x
